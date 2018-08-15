@@ -23,9 +23,14 @@ httpd_app = httpd_app.format(thread=THREAD,
 httpd_prefix = httpd_prefix.format(app=config.get("base"),
                                    path=config.get("path"))
 
-print(httpd_prefix)
-
 print(httpd_app)
+
+#
+# with open(PROJECT_DIR+"/conf/httpd-app.conf", "w") as app:
+#     app.write(httpd_app)
+#
+# with open(PROJECT_DIR+"/conf/httpd-prefix.conf", "w") as prefix:
+#     prefix.write(httpd_prefix)
 
 """
 

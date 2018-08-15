@@ -26,7 +26,7 @@ SECRET_KEY = '*x!@i=2$^8a4$@!sbs0h^ui^o@ad*n1z1dg9mn-kt)g-=sim8e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ["smeiling.co.uk", "www.smeiling.co.uk", "localhost", "0.0.0.0", "127.0.0.1"]
 
 
 # Application definition
