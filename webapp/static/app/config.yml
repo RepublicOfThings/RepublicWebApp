@@ -2,6 +2,7 @@
 name: test
 base: RTKWebApp
 app: webapp
+path: /home/republicuser/djangostack-2.0.3-0/apps/django/django_projects
 
 deploy:
   apache:
@@ -25,22 +26,22 @@ webapp:
     css: app/content/republic.css
 
   dashboards:
-    Manager:
-      url: /dashboard/alerts/
-      dash: incident_posture_clone_v10
-      app: alert_manager
-    Incident:
-      url: /dashboard/homes/
-      dash: smeiling_dashboard_mca_v10_splunk
+    Vodafone:
+      url: /dashboard/vodafone/
+      dash: smeiling_dashboard_vodafone_demo_v10
       app: rot_smart_homes_app
-    Grapefruit:
-      url: /dashboard/toast/
-      dash: smeiling_dashboard_mca_v10_splunk
-      app: rot_smart_homes_app
+#    Incident:
+#      url: /dashboard/homes/
+#      dash: smeiling_dashboard_mca_v10_splunk
+#      app: rot_smart_homes_app
+#    Grapefruit:
+#      url: /dashboard/toast/
+#      dash: smeiling_dashboard_mca_v10_splunk
+#      app: rot_smart_homes_app
 
   splunk:
     port: 8000
     host: 37.48.244.182
-    username: smeiling
-    password: qAk6XJLedAeD
+    username: vodademo
+    password: b98puxPJinkQ
     url_template: http://{host}:{port}/en-US/account/insecurelogin?username={user}&password={pwd}&return_to=app/{app}/{dash}
