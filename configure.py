@@ -20,6 +20,11 @@ httpd_app = httpd_app.format(thread=THREAD,
                              app=config.get("base"),
                              project=config.get("app"))
 
+httpd_prefix = httpd_prefix.format(app=config.get("base"),
+                                   path=config.get("path"))
+
+print(httpd_prefix)
+
 print(httpd_app)
 
 """

@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'RTKWebApp.urls'
+ROOT_URLCONF = 'RepublicWebApp.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RTKWebApp.wsgi.application'
+WSGI_APPLICATION = 'RepublicWebApp.wsgi.application'
 
 
 # Database

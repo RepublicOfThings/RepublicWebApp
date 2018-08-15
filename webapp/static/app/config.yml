@@ -1,6 +1,6 @@
 
 name: test
-base: RTKWebApp
+base: RepublicWebApp
 app: webapp
 path: /home/republicuser/djangostack-2.0.3-0/apps/django/django_projects
 
