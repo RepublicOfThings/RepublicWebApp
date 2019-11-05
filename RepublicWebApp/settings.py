@@ -21,10 +21,10 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*x!@i=2$^8a4$@!sbs0h^ui^o@ad*n1z1dg9mn-kt)g-=sim8e'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ['DEBUG_MODE'] == 'TRUE'
 
 ALLOWED_HOSTS = ["smeiling.co.uk", "www.smeiling.co.uk", "localhost", "0.0.0.0", "127.0.0.1"]
 

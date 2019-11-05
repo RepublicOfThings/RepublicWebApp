@@ -1,9 +1,10 @@
+import re
+import os
+import yaml
 from django.shortcuts import render
 from django.http import HttpResponse
-import yaml
-import re
 
-config = yaml.load(open("webapp/static/app/config.yml"))
+config = yaml.load(open("config.yml"))
 
 webapp = config["webapp"]
 design = webapp["design"]
@@ -18,7 +19,7 @@ def home(request):
     return HttpResponse(render(request, 'pages/home/index.html', {"title": "Home",
                                                                   "css": design["css"],
                                                                   "logo": design["logo"],
-                                                                  "dashboards": webapp["dashboards"],}))
+                                                                  "dashboards": webapp["dashboards"]}))
 
 
 def about(request):
