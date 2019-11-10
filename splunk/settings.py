@@ -3,14 +3,16 @@ import yaml
 # Setup Splunk config
 SPLUNK = yaml.load(open("config/config.yml"), Loader=yaml.SafeLoader)["webapp"]["splunk"]
 
-USERNAME = SPLUNK["username"]
-PASSWORD = SPLUNK["password"]
-HOST = SPLUNK["host"]
-PORT = SPLUNK["port"]
+SPLUNK_SCHEME = "http"
+SPLUNK_USERNAME = SPLUNK["username"]
+SPLUNK_PASSWORD = SPLUNK["password"]
+SPLUNK_HOST = SPLUNK["host"]
+SPLUNK_PORT = SPLUNK["port"]
 
-SPLUNK_URL = f"http://{HOST}:{PORT}/en-US/account/insecurelogin?username={USERNAME}&password={PASSWORD}&return_to=app/"
-# http://37.48.244.182:8000/en-US/account/insecurelogin?username=vodademo&password=b98puxPJinkQ&return_to=app/rot_smart_homes_app/smeiling_dashboard_vodafone_demo_v10
-
+SPLUNK_BASE = f"{SPLUNK_SCHEME}://{SPLUNK_HOST}:{SPLUNK_PORT}"
+# /en-US/account/insecurelogin?username={SPLUNK_USERNAME}&password={SPLUNK_PASSWORD}
 # Setup proxy config
+PROXY_SCHEME = "http"
 PROXY_PORT = 5000
 PROXY_HOST = "0.0.0.0"
+PROXY_BASE = f"{PROXY_SCHEME}://{PROXY_HOST}:{PROXY_PORT}"

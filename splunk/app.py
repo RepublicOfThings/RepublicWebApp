@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 def proxy(path: str):
     logger.debug(path)
 
-    data = session.get(f"http://37.48.244.182:8000/en-US/{path}", params=request.args).content
+    data = session.get(f"{settings.SPLUNK_BASE}/en-US/{path}", params=request.args).content
 
     if path.endswith(".js"):
         return Response(data, mimetype='text/javascript')
@@ -27,10 +27,10 @@ def proxy(path: str):
     return data
 
 
-@app.route('/en-US/splunkd', defaults={"path": ""})
-@app.route("/en-US/splunkd/<path:path>", methods=("POST", ))
+@app.route('/en-US/', defaults={"path": ""})
+@app.route("/en-US/<path:path>", methods=("POST", ))
 def proxy_splunkd(path):
-    url = f"http://37.48.244.182:8000/en-US/splunkd/{path}"
+    url = f"{settings.SPLUNK_BASE}/en-US/{path}"
 
     data = request.values.to_dict()
 
@@ -41,11 +41,11 @@ def proxy_splunkd(path):
 
 @app.route("/en-US/account/insecurelogin")
 def login():
-    response = session.get(f"http://37.48.244.182:8000/en-US/account/insecurelogin", params=request.args)
+    response = session.get(f"{settings.SPLUNK_BASE}/en-US/account/insecurelogin", params=request.args)
     logger.debug("{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict()))
     if "return_to" in request.args:
         return_to = request.args.get("return_to")
-        return redirect(f"http://localhost:5000/en-US/{return_to}")
+        return redirect(f"{settings.PROXY_BASE}/en-US/{return_to}")
     else:
         return response.content
 
