@@ -3,11 +3,13 @@ version: "3"
 services:
   splunk:
     build:
-      context: splunk
+      context: ./splunk
     volumes:
       - ./config/:/app/config
     ports:
       - 5000:5000
+    environment:
+      TARGET_PORT: ${TARGET_PORT}
   
   nginx:
     build: ./nginx
@@ -15,14 +17,15 @@ services:
       - ./keys/:/etc/nginx/keys
     ports:
       - ${TARGET_PORT}:443
-    # depends_on:
-    #   - smeiling
+    depends_on:
+      - splunk
+      - smeiling
 
-  # smeiling:
-  #   build:
-  #     context: ./smeiling
-  #   volumes:
-  #     - ./config/:/app/config
-  #   environment:
-  #     SECRET_KEY: ${SECRET_KEY}
-  #     DEBUG: "False"
+  smeiling:
+    build: ./smeiling
+    volumes:
+      - ./config/:/app/config
+    ports:
+      - 8000:8000
+    environment:
+      SECRET_KEY: test
