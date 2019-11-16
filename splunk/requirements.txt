@@ -1,5 +1,0 @@
-flask
-pyyaml
-pyopenssl 
-requests
-beautifulsoup4
