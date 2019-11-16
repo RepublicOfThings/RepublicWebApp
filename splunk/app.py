@@ -1,6 +1,5 @@
-import logging
 import requests
-from flask import Flask, request, Response, redirect
+from flask import Flask, request, Response, redirect, url_for, render_template
 
 import settings
 
@@ -8,46 +7,89 @@ app = Flask(__name__)
 
 session = requests.Session()
 
-logger = logging.getLogger("SPLUNK-PROXY")
-logging.basicConfig(level=logging.DEBUG)
 
-
-@app.route('/en-US/', defaults={"path": ""})
-@app.route("/en-US/<path:path>", methods=("GET", ))
+@app.route("/en-US/", defaults={"path": ""})
+@app.route("/en-US/<path:path>", methods=("GET",))
 def proxy(path: str):
-    logger.debug(path)
-
-    data = session.get(f"{settings.SPLUNK_BASE}/en-US/{path}", params=request.args).content
+    data = session.get(
+        f"{settings.SPLUNK_BASE}/en-US/{path}", params=request.args
+    ).content
 
     if path.endswith(".js"):
-        return Response(data, mimetype='text/javascript')
+        return Response(data, mimetype="text/javascript")
     elif path.endswith(".css"):
-        return Response(data, mimetype='text/css')
-
+        return Response(data, mimetype="text/css")
+    elif (
+        path.endswith(".json")
+        or request.args.get("output_mode") == "json"
+        or request.args.get("output_mode") == "json_cols"
+    ):
+        return Response(data, mimetype="text/json")
     return data
 
 
-@app.route('/en-US/', defaults={"path": ""})
-@app.route("/en-US/<path:path>", methods=("POST", ))
+@app.route("/en-US/", defaults={"path": ""})
+@app.route("/en-US/<path:path>", methods=("POST",))
 def proxy_splunkd(path):
-    url = f"{settings.SPLUNK_BASE}/en-US/{path}"
 
-    data = request.values.to_dict()
+    headers = {
+        "X-Requested-With": "XMLHttpRequest",
+        "X-Splunk-Form-Key": session.cookies["splunkweb_csrf_token_8000"],
+        "Accept": "text/javascript, text/html, application/xml, text/xml, */*",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    }
 
-    response = requests.post(url, json=data, headers=session.headers)
+    response = session.post(
+        f"{settings.SPLUNK_BASE}/en-US/{path}",
+        data=request.values.to_dict(),
+        verify=False,
+        headers=headers,
+    )
 
     return Response(response.content, status=response.status_code)
 
 
 @app.route("/en-US/account/insecurelogin")
-def login():
+def insecure_login():
+    app.logger.debug(request.args)
     response = session.get(f"{settings.SPLUNK_BASE}/en-US/account/insecurelogin", params=request.args)
-    logger.debug("{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict()))
     if "return_to" in request.args:
         return_to = request.args.get("return_to")
         return redirect(f"{settings.PROXY_BASE}/en-US/{return_to}")
     else:
         return response.content
+
+
+@app.route("/_login")
+def login():
+
+    dashboard = settings.DASHBOARDS[request.args["dashboard"]]
+
+    return_to = f"app/{dashboard['app']}/{dashboard['name']}"
+
+    args = {
+        "username": settings.SPLUNK_USERNAME,
+        "password": settings.SPLUNK_PASSWORD
+    }
+
+    response = session.get(f"{settings.SPLUNK_BASE}/en-US/account/insecurelogin", params=args)
+
+    if response.status_code == 200:
+        return redirect(f"{settings.PROXY_BASE}/en-US/{return_to}")
+    else:
+        return redirect(url_for("error", message=response.content, status=response.status_code))
+
+
+@app.route("/_ping")
+def ping():
+    return
+
+
+@app.route("/_error")
+def error():
+    message = request.args["message"]
+    status = request.args["message"]
+    return render_template("error.html", message=message, status=status)
 
 
 if __name__ == "__main__":

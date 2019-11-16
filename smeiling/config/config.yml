@@ -1,0 +1,26 @@
+webapp:
+  design:
+    # logo: /static/app/SmEILing.png
+    # logo: /static/app/city_verve_logo.png
+    logo: https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Vodafone_2017_logo.svg/1024px-Vodafone_2017_logo.svg.png
+    css: app/content/republic.css
+
+  dashboards:
+    Vodafone:
+      url: /dashboard/vodafone/
+      name: smeiling_dashboard_vodafone_demo_v10
+      app: rot_smart_homes_app
+    Incident:
+      url: /dashboard/homes/
+      name: smeiling_dashboard_mca_v10_splunk
+      app: rot_smart_homes_app
+    Grapefruit:
+      url: /dashboard/toast/
+      name: smeiling_dashboard_mca_v10_splunk
+      app: rot_smart_homes_app
+
+  splunk:
+    port: 8000
+    host: 37.48.244.182
+    username: vodademo
+    password: b98puxPJinkQ
