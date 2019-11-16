@@ -4,11 +4,9 @@ EXPOSE 5000
 
 RUN useradd republic
 
-RUN pip install flask pyyaml pyopenssl requests
+RUN pip install flask pyyaml pyopenssl requests gunicorn
 
 COPY . /app
 WORKDIR /app
 
-ENV FLASK_APP="app.py"
-
-ENTRYPOINT [ "flask", "run", "--host=0.0.0.0", "--port=5000"]
+CMD gunicorn app:app --bind 0.0.0.0:5000 --log-level=debug --threads=2 --workers=2 --timeout=5

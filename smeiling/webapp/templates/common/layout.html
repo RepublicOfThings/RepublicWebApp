@@ -48,7 +48,7 @@
     <script>
         // add logo toggles
         $(document).ready(function(){
-            var data = {{ dashboards|safe }};
+            let data = {{ dashboards|safe }};
             console.log(data);
 
             $.each(data, function(key, value) {

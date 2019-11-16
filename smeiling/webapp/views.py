@@ -1,5 +1,4 @@
 import re
-import os
 import yaml
 import logging
 from django.shortcuts import render
@@ -15,7 +14,6 @@ splunk = webapp["splunk"]
 
 
 def home(request):
-    print(webapp["dashboards"])
     return HttpResponse(
         render(
             request,
@@ -49,13 +47,13 @@ def dashboards(request, name):
     print(name)
     regex = re.compile("/dashboard/(.*)/")
     title = "Dashboard"
-    dashboard_conf = {}
+    # dashboard_conf = {}
     for dashboard, conf in webapp["dashboards"].items():
         if regex.search(conf["url"]).group(1) == name:
             title = dashboard
-            dashboard_conf = conf
+            # dashboard_conf = conf
 
-    template = splunk.get("url_template")
+    # template = splunk.get("url_template")
 
     # target = template.format(
     #     host=splunk.get("host"),
@@ -66,14 +64,14 @@ def dashboards(request, name):
     #     dash=dashboard_conf.get("dash"),
     # )
 
-    app = dashboard_conf.get("app")
-    dash = dashboard_conf.get("dash")
+    # app = dashboard_conf.get("app")
+    # dash = dashboard_conf.get("dash")
     target = f"https://localhost:80/login"
 
     return HttpResponse(
         render(
             request,
-            "smeiling/pages/dashboard/index.html",
+            "pages/dashboard/index.html",
             {
                 "title": title,
                 "css": design["css"],

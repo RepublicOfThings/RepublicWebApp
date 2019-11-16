@@ -12,16 +12,18 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 options = webdriver.ChromeOptions()
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--headless')
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless")
 
 DRIVER = webdriver.Chrome(chrome_options=options)
 
-@app.route('/', defaults={"path": ""})
-@app.route("/<path:path>", methods=("GET", ))
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>", methods=("GET",))
 def proxy(path):
     return requests.get(f"http://37.48.244.182:8000/{path}").content
+
 
 # @app.route("/", methods=("GET", ))
 # def dashboard():
@@ -68,23 +70,28 @@ session = requests.Session()
 
 logging.basicConfig(level=logging.DEBUG)
 
-@app.route('/en-US/', defaults={"path": ""})
-@app.route("/en-US/<path:path>", methods=("GET", ))
+
+@app.route("/en-US/", defaults={"path": ""})
+@app.route("/en-US/<path:path>", methods=("GET",))
 def proxy(path):
     logging.debug(path)
 
-    data = session.get(f"http://37.48.244.182:8000/en-US/{path}", params=request.args, headers=request.headers).content
+    data = session.get(
+        f"http://37.48.244.182:8000/en-US/{path}",
+        params=request.args,
+        headers=request.headers,
+    ).content
 
     if path.endswith(".js"):
-        return Response(data, mimetype='text/javascript')
+        return Response(data, mimetype="text/javascript")
     elif path.endswith(".css"):
-        return Response(data, mimetype='text/css')
+        return Response(data, mimetype="text/css")
 
     return data
 
 
-@app.route('/en-US/splunkd', defaults={"path": ""})
-@app.route("/en-US/splunkd/<path:path>", methods=("POST", ))
+@app.route("/en-US/splunkd", defaults={"path": ""})
+@app.route("/en-US/splunkd/<path:path>", methods=("POST",))
 def proxy_splunkd(path):
     url = f"http://37.48.244.182:8000/en-US/splunkd/{path}"
     cookie = request.headers["Cookie"]
@@ -106,10 +113,15 @@ def proxy_splunkd(path):
     # return Response(response.content, status=response.status_code, content_type=response.headers["Content-Type"])
     return Response(response.content, status=response.status_code)
 
+
 @app.route("/en-US/account/insecurelogin")
 def login():
-    response = session.get(f"http://37.48.244.182:8000/en-US/account/insecurelogin", params=request.args)
-    logging.debug("{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict()))
+    response = session.get(
+        f"http://37.48.244.182:8000/en-US/account/insecurelogin", params=request.args
+    )
+    logging.debug(
+        "{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict())
+    )
     if "return_to" in request.args:
         return_to = request.args.get("return_to")
         logging.error(response.headers)
@@ -136,23 +148,26 @@ session = requests.Session()
 
 logging.basicConfig(level=logging.DEBUG)
 
-@app.route('/en-US/', defaults={"path": ""})
-@app.route("/en-US/<path:path>", methods=("GET", ))
+
+@app.route("/en-US/", defaults={"path": ""})
+@app.route("/en-US/<path:path>", methods=("GET",))
 def proxy(path):
     logging.debug(path)
 
-    data = session.get(f"http://37.48.244.182:8000/en-US/{path}", params=request.args).content
+    data = session.get(
+        f"http://37.48.244.182:8000/en-US/{path}", params=request.args
+    ).content
 
     if path.endswith(".js"):
-        return Response(data, mimetype='text/javascript')
+        return Response(data, mimetype="text/javascript")
     elif path.endswith(".css"):
-        return Response(data, mimetype='text/css')
+        return Response(data, mimetype="text/css")
 
     return data
 
 
-@app.route('/en-US/splunkd', defaults={"path": ""})
-@app.route("/en-US/splunkd/<path:path>", methods=("POST", ))
+@app.route("/en-US/splunkd", defaults={"path": ""})
+@app.route("/en-US/splunkd/<path:path>", methods=("POST",))
 def proxy_splunkd(path):
     url = f"http://37.48.244.182:8000/en-US/splunkd/{path}"
     cookie = request.headers["Cookie"]
@@ -164,10 +179,16 @@ def proxy_splunkd(path):
     response = requests.post(url, json=data, data=data, verify=False)
 
     if response.status_code != 200:
-        logging.error("Failed to post with {0} - code {1} ({2})".format(str(request.values.to_dict()), response.status_code, response.content))
+        logging.error(
+            "Failed to post with {0} - code {1} ({2})".format(
+                str(request.values.to_dict()), response.status_code, response.content
+            )
+        )
         return Response(response.content, status=response.status_code)
     else:
-        logging.info("Successfully posted with {0}".format(str(request.values.to_dict())))
+        logging.info(
+            "Successfully posted with {0}".format(str(request.values.to_dict()))
+        )
         # print(response.content)
         # return Response(response.content, mimetype="text/json")
     return Response(response.content, status=response.status_code)
@@ -181,8 +202,12 @@ def proxy_splunkd(path):
 
 @app.route("/en-US/account/insecurelogin")
 def login():
-    response = session.get(f"http://37.48.244.182:8000/en-US/account/insecurelogin", params=request.args)
-    logging.debug("{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict()))
+    response = session.get(
+        f"http://37.48.244.182:8000/en-US/account/insecurelogin", params=request.args
+    )
+    logging.debug(
+        "{0}{1} - VAGRANT".format(response.headers, response.cookies.get_dict())
+    )
     if "return_to" in request.args:
         return_to = request.args.get("return_to")
         # # return redirect(url_for("proxy", path=return_to, _scheme='https', _external=True))
