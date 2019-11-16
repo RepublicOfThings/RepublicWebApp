@@ -1,0 +1,25 @@
+app:
+  name: smeiling
+  host: 130.211.57.126
+  port: 443
+  ssl: yes
+
+  dashboards:
+    Vodafone:
+      app: rot_smart_homes_app
+      name: smeiling_dashboard_vodafone_demo_v10
+
+  proxy:
+    host: 37.48.244.182
+    port: 8000
+    scheme: http
+    username: vodademo
+    password: b98puxPJinkQ
+
+  style:
+    logos:
+      republic: republic.png
+      partner: partner.png
+
+    stylesheets:
+      - republic.css

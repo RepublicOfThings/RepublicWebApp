@@ -6,3 +6,4 @@
 .idea/misc.xml
 .idea/libraries/R_User_Library.xml
 .idea/jsonSchemas.xml
+*.xml

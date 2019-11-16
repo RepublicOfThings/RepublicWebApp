@@ -17,6 +17,7 @@ spec:
         app: smeiling-vodademo
         tier: application
     spec:
+
       containers:
       - name: splunk
         image: splunk
@@ -27,8 +28,10 @@ spec:
       - name: nginx
         image: nginx
         ports:
-          - name: nginx-port
+          - name: nginx-http
             containerPort: 80
+          - name: nginx-https
+            containerPort: 443
 
       - name: smeiling
         image: smeiling

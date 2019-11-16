@@ -7,13 +7,19 @@ build:
   # defines where to find the code at build time and where to push the resulting image
   artifacts:
   - image: splunk
-    context: splunk/
+    context: .
+    docker:
+      dockerfile: splunk/Dockerfile
 
   - image: nginx
-    context: nginx/
+    context: .
+    docker:
+      dockerfile: nginx/Dockerfile
 
   - image: smeiling
-    context: smeiling/
+    context: .
+    docker:
+      dockerfile: smeiling/Dockerfile
 
 # defines the Kubernetes manifests to deploy on each run
 deploy:

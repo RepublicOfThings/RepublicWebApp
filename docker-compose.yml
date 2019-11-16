@@ -11,15 +11,13 @@ services:
     build:
       context: nginx/
 
-#    volumes:
-#      - ./keys/:/etc/nginx/keys
     ports:
-      - ${TARGET_PORT}:443
+      - 80:443
     depends_on:
        - smeiling
 
   smeiling:
      build:
-       context: ./smeiling
+       context: smeiling/
      volumes:
        - ./config/:/app/config
