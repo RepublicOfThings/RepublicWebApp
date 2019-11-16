@@ -9,4 +9,4 @@ RUN pip install flask pyyaml pyopenssl requests gunicorn
 COPY . /app
 WORKDIR /app
 
-CMD gunicorn app:app --bind 0.0.0.0:5000 --log-level=debug --threads=2 --workers=2 --timeout=5
+CMD gunicorn app:app --bind 0.0.0.0:5000 --log-level=info --threads=2 --workers=2 --timeout=5

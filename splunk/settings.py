@@ -2,8 +2,10 @@ import os
 import uuid
 import yaml
 
-
 APP_NAME = os.environ["APP_NAME"]
+
+ENABLE_PROXY_SSL = True
+ENABLE_SPLUNK_SSL = False
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,7 +15,7 @@ SPLUNK = yaml.load(open("config/config.yml"), Loader=yaml.SafeLoader)["webapp"][
 ]
 
 # Basic splunk variables
-SPLUNK_SCHEME = "http"
+SPLUNK_SCHEME = "http" if not ENABLE_SPLUNK_SSL else "https"
 SPLUNK_USERNAME = SPLUNK["username"]
 SPLUNK_PASSWORD = SPLUNK["password"]
 SPLUNK_HOST = SPLUNK["host"]
@@ -24,7 +26,7 @@ SPLUNK_BASE = f"{SPLUNK_SCHEME}://{SPLUNK_HOST}:{SPLUNK_PORT}"
 SPLUNK_LOGIN = None
 
 # Setup proxy config...
-PROXY_SCHEME = "http"
+PROXY_SCHEME = "http" if not ENABLE_PROXY_SSL else "https"
 PROXY_PORT = os.getenv("TARGET_PORT", 5000)
 PROXY_HOST = "localhost"
 PROXY_MOUNT = APP_NAME

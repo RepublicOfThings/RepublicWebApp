@@ -10,22 +10,24 @@ services:
       - 5000:5000
     env_file:
       - .envs/.local
-  
-#  nginx:
-#    build: ./nginx
-#    volumes:
-#      - ./keys/:/etc/nginx/keys
-#    ports:
-#      - ${TARGET_PORT}:443
-#    depends_on:
-#      - splunk
-#      - smeiling
 
-  smeiling:
-    build: ./smeiling
+#  smeiling:
+#    build: ./smeiling
+#    volumes:
+#      - ./config/:/app/config
+#    ports:
+#      - 8000:8000
+#    environment:
+#      SECRET_KEY: test
+
+  nginx:
+    build: ./nginx
     volumes:
-      - ./config/:/app/config
+      - ./keys/:/etc/nginx/keys
+    env_file:
+      - .envs/.local
     ports:
-      - 8000:8000
-    environment:
-      SECRET_KEY: test
+      - ${TARGET_PORT}:443
+    depends_on:
+      - splunk
+#      - smeiling

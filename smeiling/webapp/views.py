@@ -1,7 +1,7 @@
 import re
 import yaml
 import logging
-from django.shortcuts import render
+from django.shortcuts import render, resolve_url
 from django.http import HttpResponse
 
 logging.basicConfig(level=logging.DEBUG)
@@ -66,7 +66,7 @@ def dashboards(request, name):
 
     # app = dashboard_conf.get("app")
     # dash = dashboard_conf.get("dash")
-    target = f"https://localhost:80/login"
+    target = f"http://localhost:5000/login"
 
     return HttpResponse(
         render(
