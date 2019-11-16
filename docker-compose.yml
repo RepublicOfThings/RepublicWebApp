@@ -3,11 +3,12 @@ version: "3"
 services:
   splunk:
     build:
-      context: ./splunk
+      context: splunk
     volumes:
       - ./config/:/app/config
     ports:
       - 5000:5000
+<<<<<<< HEAD
     env_file:
       - .envs/.local
 
@@ -20,6 +21,9 @@ services:
 #    environment:
 #      SECRET_KEY: test
 
+=======
+  
+>>>>>>> parent of 4d24938... Added smeiling, fixed proxy.
   nginx:
     build: ./nginx
     volumes:
@@ -28,6 +32,20 @@ services:
       - .envs/.local
     ports:
       - ${TARGET_PORT}:443
+<<<<<<< HEAD
     depends_on:
       - splunk
 #      - smeiling
+=======
+    # depends_on:
+    #   - smeiling
+
+  # smeiling:
+  #   build:
+  #     context: ./smeiling
+  #   volumes:
+  #     - ./config/:/app/config
+  #   environment:
+  #     SECRET_KEY: ${SECRET_KEY}
+  #     DEBUG: "False"
+>>>>>>> parent of 4d24938... Added smeiling, fixed proxy.
