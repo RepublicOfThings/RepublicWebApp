@@ -8,6 +8,7 @@ RUN pip install flask pyyaml pyopenssl requests gunicorn
 
 COPY /splunk /app
 COPY /config /app/config
+
 WORKDIR /app
 
 CMD gunicorn app:app --bind 0.0.0.0:5000 --log-level=info --threads=1 --workers=1 --timeout=5

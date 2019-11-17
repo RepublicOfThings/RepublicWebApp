@@ -1,7 +1,5 @@
 import yaml
 
-SSL_ENABLED = False
-
 CONFIG = yaml.load(open("config/config.yml"), Loader=yaml.SafeLoader)["app"]
 
 # Get dashboards

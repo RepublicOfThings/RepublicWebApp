@@ -1,0 +1,47 @@
+
+name: test
+base: RepublicWebApp
+app: webapp
+path: /home/republicuser/djangostack-2.0.3-0/apps/django/django_projects
+
+deploy:
+  apache:
+    path: /home/republicuser/djangostack-2.0.3-0/apache2/conf/bitnami,
+    template: Include '/home/republicuser/djangostack-2.0.3-0/apps/django/django_projects/test/conf/httpd-prefix.conf',
+    ctlscript: /home/republicuser/djangostack-2.0.3-0/ctlscript.sh
+  wsgi:
+    files:
+      httpd-app.conf: httpd-app-template.conf,
+      httpd-prefix.conf: httpd-prefix-template.conf
+  github:
+    repository: RepublicWebApp,
+    user: markdouthwaite,
+    url: https://github.com/republicofthings/RepublicWebApp
+
+webapp:
+  design:
+    # logo: /static/app/SmEILing.png
+    # logo: /static/app/city_verve_logo.png
+    logo: https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Vodafone_2017_logo.svg/1024px-Vodafone_2017_logo.svg.png
+    css: app/content/republic.css
+
+  dashboards:
+    Vodafone:
+      url: /dashboard/vodafone/
+      dash: smeiling_dashboard_vodafone_demo_v10
+      app: rot_smart_homes_app
+#    Incident:
+#      url: /dashboard/homes/
+#      dash: smeiling_dashboard_mca_v10_splunk
+#      app: rot_smart_homes_app
+#    Grapefruit:
+#      url: /dashboard/toast/
+#      dash: smeiling_dashboard_mca_v10_splunk
+#      app: rot_smart_homes_app
+
+  splunk:
+    port: 8000
+    host: 37.48.244.182
+    username: vodademo
+    password: b98puxPJinkQ
+    url_template: http://{host}:{port}/en-US/account/insecurelogin?username={user}&password={pwd}&return_to=app/{app}/{dash}
