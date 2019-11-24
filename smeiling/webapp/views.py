@@ -11,6 +11,7 @@ logo = CONFIG.get("style", "/static/app/SmEILing.png")
 dashboards = CONFIG.get("dashboards", {})
 stylesheet = CONFIG.get("stylesheet", "app/content/republic.css")
 
+
 META = {
     "css": stylesheet,
     "logo": logo["logos"],
@@ -46,7 +47,6 @@ def dashboard(request, name):
             "target": target_url,
             **META
         }
-        print(payload)
         return HttpResponse(render(request, "pages/dashboard/index.html", payload))
     except KeyError:
         return HttpResponse(b"No matching dashboard found.", status=404)

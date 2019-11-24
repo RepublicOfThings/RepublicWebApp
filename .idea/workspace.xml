@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9750d65-dbe7-40ec-93ea-9a09dd50175a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smeiling/RepublicWebApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/RepublicWebApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smeiling/RepublicWebApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/RepublicWebApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smeiling/webapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/webapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smeiling/webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smeiling/webapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,53 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="304">
+              <caret line="35" column="28" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smeiling/RepublicWebApp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="126" column="30" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="30" />
+            <state relative-caret-position="351">
+              <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
               <folding>
                 <element signature="e#305#314#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smeiling/RepublicWebApp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-              <folding>
-                <element signature="e#628#639#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nginx/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -79,6 +56,7 @@
     <findStrings>
       <find>settings.</find>
       <find>local</find>
+      <find>static</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,28 +80,27 @@
         <option value="$PROJECT_DIR$/smeiling/app.py" />
         <option value="$PROJECT_DIR$/smeiling-django/Dockerfile" />
         <option value="$PROJECT_DIR$/smeiling-django/webapp/views.py" />
-        <option value="$PROJECT_DIR$/smeiling/webapp/urls.py" />
         <option value="$PROJECT_DIR$/.envs/.local" />
         <option value="$PROJECT_DIR$/splunk/settings.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/smeiling/webapp/templates/pages/dashboard/index.html" />
-        <option value="$PROJECT_DIR$/smeiling/webapp/views.py" />
-        <option value="$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html" />
-        <option value="$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html" />
         <option value="$PROJECT_DIR$/splunk/Dockerfile" />
         <option value="$PROJECT_DIR$/smeiling/Dockerfile" />
         <option value="$PROJECT_DIR$/manifests/proxy.deployment.yml" />
-        <option value="$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html" />
-        <option value="$PROJECT_DIR$/nginx/nginx.conf" />
         <option value="$PROJECT_DIR$/nginx/Dockerfile" />
-        <option value="$PROJECT_DIR$/config/config.yml" />
         <option value="$PROJECT_DIR$/smeiling/RepublicWebApp/urls.py" />
         <option value="$PROJECT_DIR$/smeiling/RepublicWebApp/settings.py" />
+        <option value="$PROJECT_DIR$/smeiling/webapp/views.py" />
+        <option value="$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html" />
+        <option value="$PROJECT_DIR$/config/config.yml" />
+        <option value="$PROJECT_DIR$/smeiling/webapp/urls.py" />
+        <option value="$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html" />
+        <option value="$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html" />
+        <option value="$PROJECT_DIR$/nginx/nginx.conf" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="400" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -151,6 +128,73 @@
               <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="nginx" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="common" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="about" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="RepublicWebApp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Projects/RepublicWebApp" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="smeiling" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="home" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -162,6 +206,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -301,23 +351,25 @@
       <workItem from="1573936314288" duration="2387000" />
       <workItem from="1573939037281" duration="7009000" />
       <workItem from="1573949577183" duration="994000" />
-      <workItem from="1573985971168" duration="10510000" />
+      <workItem from="1573985971168" duration="11458000" />
+      <workItem from="1574592643226" duration="5065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23799000" />
+    <option name="totallyTimeSpent" value="29812000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2167382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21959943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="aws.explorer" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" x="0" y="22" width="1440" height="878" id="Run" maximized="true" order="2" visible="true" weight="0.5466831" />
+      <window_info anchor="bottom" x="0" y="22" width="1440" height="878" id="Run" maximized="true" order="2" visible="true" weight="0.34152335" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992629" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -379,13 +431,6 @@
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="127" column="6" lean-forward="true" selection-start-line="127" selection-start-column="6" selection-end-line="127" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frag.py" />
     <entry file="file://$PROJECT_DIR$/scripts/fragment.py" />
     <entry file="file://$PROJECT_DIR$/example.html" />
@@ -433,9 +478,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.envs/.local">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.envs/.local" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -454,34 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -530,13 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifests/proxy.deployment.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
@@ -544,20 +552,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#h5#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="231">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/dashboard/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="131">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/django/urls/resolvers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="233" column="6" selection-start-line="233" selection-start-column="6" selection-end-line="233" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/django/urls/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/pages/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="107" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/templates/common/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#h5#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -570,15 +620,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        <state relative-caret-position="234">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smeiling/webapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smeiling/RepublicWebApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="329">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding>
             <element signature="e#628#639#0" expanded="true" />
           </folding>
@@ -587,11 +647,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smeiling/RepublicWebApp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
           <folding>
             <element signature="e#305#314#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="28" />
         </state>
       </provider>
     </entry>
