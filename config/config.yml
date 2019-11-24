@@ -1,6 +1,6 @@
 app:
   name: vodademo
-  host: 34.77.185.188
+  host: 35.240.45.22
   port: 443
   ssl: yes
 

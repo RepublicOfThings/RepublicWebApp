@@ -11,11 +11,16 @@ logo = CONFIG.get("style", "/static/app/SmEILing.png")
 dashboards = CONFIG.get("dashboards", {})
 stylesheet = CONFIG.get("stylesheet", "app/content/republic.css")
 
+BASE_URL = "{protocol}://{host}:{port}/{app}".format(protocol="https" if CONFIG.get("ssl", False) else "http",
+                                                     host=CONFIG["host"],
+                                                     port=CONFIG["port"],
+                                                     app=CONFIG["name"])
 
 META = {
     "css": stylesheet,
     "logo": logo["logos"],
     "app": CONFIG["name"],
+    "base_url": BASE_URL,
     "dashboards": dashboards
 }
 
