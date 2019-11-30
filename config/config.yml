@@ -1,6 +1,6 @@
 app:
   name: vodademo
-  host: 35.240.45.22
+  host: 35.187.77.111
   port: 443
   ssl: yes
 
@@ -14,6 +14,7 @@ app:
     secret_key: republic
 
   proxy:
+    name: proxy
     host: 37.48.244.182
     port: 8000
     scheme: http

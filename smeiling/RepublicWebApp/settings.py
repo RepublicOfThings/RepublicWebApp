@@ -28,7 +28,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = BACKEND.get("secret_key", "default")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = BACKEND.get("debug", True)
+DEBUG = BACKEND.get("debug", False)
 
 ALLOWED_HOSTS = [
     "smeiling.co.uk",

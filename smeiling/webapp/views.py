@@ -46,7 +46,7 @@ def about(request):
 def dashboard(request, name):
 
     try:
-        target_url = f"/_login?dashboard={name}"
+        target_url = f"/proxy/_login?dashboard={name}"
         payload = {
             "title": f"{name}",
             "target": target_url,
